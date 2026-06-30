@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SKOVA — Feel-good essentials, beautifully upgraded</title>
+<meta name="description" content="SKOVA — premium everyday wellness, self-care & relief essentials for modern India. Cash on Delivery, free shipping across India, easy 7-day returns."/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ===================== DESIGN TOKENS ===================== */
+:root{
+  --porcelain:#FBF7F3;
+  --porcelain-2:#FFFDFB;
+  --cocoa:#2A211C;
+  --cocoa-soft:#5A4D44;
+  --gold:#C39A4E;
+  --gold-light:#E4C886;
+  --gold-deep:#A87E36;
+  --blush:#F0E2DA;
+  --nude:#E3CBBF;
+  --hairline:#E6DAD1;
+  --shadow:0 18px 50px -28px rgba(42,33,28,.45);
+  --shadow-soft:0 10px 34px -22px rgba(42,33,28,.4);
+  --radius:22px;
+  --radius-lg:26px;
+  --maxw:1180px;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--cocoa);
+  background:var(--porcelain);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+em{font-style:italic;color:var(--gold-deep)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.muted{color:var(--cocoa-soft)}
+.center{text-align:center}
+
+/* ===================== BUTTONS ===================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--sans);font-weight:500;font-size:15px;letter-spacing:.02em;
+  padding:15px 30px;border-radius:44px;cursor:pointer;border:1px solid transparent;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.btn-primary{
+  color:#3a2c10;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));
+  box-shadow:0 12px 26px -12px rgba(168,126,54,.7);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px -12px rgba(168,126,54,.8)}
+.btn-ghost{background:transparent;border:1px solid var(--cocoa);color:var(--cocoa)}
+.btn-ghost:hover{background:var(--cocoa);color:var(--porcelain-2)}
+.btn-light{background:var(--porcelain-2);border:1px solid var(--hairline);color:var(--cocoa)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.btn-sm{padding:11px 22px;font-size:14px}
+
+/* ===================== ANNOUNCEMENT MARQUEE ===================== */
+.announce{background:var(--cocoa);color:var(--porcelain);overflow:hidden;font-size:13px;letter-spacing:.08em}
+.marquee{display:flex;width:max-content;animation:marquee 34s linear infinite}
+.marquee span{padding:10px 26px;white-space:nowrap;opacity:.92}
+.marquee span::after{content:'·';margin-left:26px;color:var(--gold-light)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===================== HEADER ===================== */
+.header{position:sticky;top:0;z-index:50;background:rgba(251,247,243,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--hairline)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.nav-left,.nav-right{display:flex;align-items:center;gap:26px}
+.nav-right{justify-content:flex-end}
+.nav-left a,.nav-right a{font-size:14.5px;font-weight:400;letter-spacing:.02em;position:relative;transition:color .2s}
+.nav-left a:hover,.nav-right a:hover{color:var(--gold-deep)}
+.brand{font-family:var(--serif);font-weight:600;font-size:27px;letter-spacing:.34em;text-align:center;padding-left:.34em}
+.cart{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--hairline);border-radius:44px;padding:8px 15px;background:var(--porcelain-2)}
+.cart .count{background:var(--gold);color:#3a2c10;font-size:11px;font-weight:600;width:19px;height:19px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:22px;height:2px;background:var(--cocoa);border-radius:2px}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;overflow:hidden;padding:74px 0 56px}
+.hero::before{content:"";position:absolute;top:-160px;right:-120px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(228,200,134,.5),rgba(228,200,134,0) 68%);filter:blur(8px);z-index:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,5.6vw,68px);margin:18px 0 20px}
+.hero .sub{font-size:18px;max-width:30em;color:var(--cocoa-soft)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 26px}
+.trust-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-size:14px}
+.stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.trust-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hairline);background:var(--porcelain-2);padding:7px 14px;border-radius:44px;font-weight:500}
+.divider-dot{width:4px;height:4px;border-radius:50%;background:var(--nude)}
+
+/* product visual placeholder */
+.hero-visual{position:relative;aspect-ratio:4/4.4;border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,var(--blush),var(--nude));box-shadow:var(--shadow);overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.hero-visual::after{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.85),rgba(255,255,255,0) 70%)}
+.ph-label{position:relative;z-index:1;font-family:var(--serif);font-style:italic;color:rgba(42,33,28,.42);font-size:15px}
+.float-badge{position:absolute;z-index:2;background:var(--porcelain-2);border:1px solid var(--hairline);border-radius:16px;
+  padding:11px 15px;box-shadow:var(--shadow-soft);font-size:13px;line-height:1.3}
+.float-badge.tl{top:18px;left:-14px}
+.float-badge.br{bottom:20px;right:-12px}
+.float-badge strong{font-family:var(--serif);font-size:15px}
+
+/* ===================== SECTION SHELL ===================== */
+section{position:relative}
+.sec{padding:78px 0}
+.sec-head{max-width:38em;margin:0 auto 44px}
+.sec-head h2{font-size:clamp(30px,3.8vw,44px);margin:12px 0 12px}
+.sec-head.left{margin-left:0;text-align:left}
+
+/* ===================== CATEGORY GRID ===================== */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat-card{position:relative;border-radius:var(--radius);padding:26px 24px 24px;min-height:230px;
+  display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--hairline);overflow:hidden;
+  box-shadow:var(--shadow-soft);transition:transform .3s ease, box-shadow .3s ease}
+.cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cat-card .c-num{position:absolute;top:18px;left:22px;font-family:var(--serif);font-style:italic;color:rgba(42,33,28,.35);font-size:15px}
+.cat-card h3{font-size:21px;margin-bottom:4px}
+.cat-card .shop-now{margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold-deep)}
+.cat-1{background:linear-gradient(160deg,#F4E7DE,#E7CFC2)}
+.cat-2{background:linear-gradient(160deg,#F6ECE2,#EAD3B7)}
+.cat-3{background:linear-gradient(160deg,#EFE6DC,#DBC8BC)}
+.cat-4{background:linear-gradient(160deg,#F3EDE4,#E2D2C4)}
+
+/* ===================== PRODUCT CARDS ===================== */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--porcelain-2);border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:var(--shadow-soft);transition:transform .3s ease, box-shadow .3s ease}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card-media{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg,var(--blush),var(--nude))}
+.card-media::after{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.8),rgba(255,255,255,0) 70%)}
+.card-media .ph-label{font-size:13px}
+.tag{position:absolute;top:12px;left:12px;z-index:1;background:var(--cocoa);color:var(--porcelain);font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:44px}
+.card-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body .name{font-family:var(--serif);font-size:18px;line-height:1.25}
+.card-rate{font-size:12.5px;color:var(--cocoa-soft);display:flex;align-items:center;gap:6px}
+.card-desc{font-size:13.5px;color:var(--cocoa-soft);flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.price{font-family:var(--serif);font-size:19px;font-weight:600}
+
+/* ===================== BENEFITS ===================== */
+.benefits{background:var(--porcelain-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ben{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.ben .ic{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg,var(--blush),var(--nude));border:1px solid var(--hairline)}
+.ben .ic svg{width:24px;height:24px;stroke:var(--gold-deep);fill:none;stroke-width:1.6}
+.ben h4{font-size:16px}
+.ben p{font-size:13.5px;color:var(--cocoa-soft)}
+
+/* ===================== TESTIMONIALS ===================== */
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst{background:var(--porcelain-2);border:1px solid var(--hairline);border-radius:var(--radius);padding:26px 24px;
+  box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:14px}
+.tst .quote{font-family:var(--serif);font-size:17.5px;line-height:1.5}
+.tst-foot{display:flex;align-items:center;gap:12px;margin-top:auto}
+.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(150deg,var(--gold-light),var(--gold-deep));
+  color:#3a2c10;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:16px}
+.tst-foot .who{font-size:14px;font-weight:500}
+.tst-foot .verified{font-size:12px;color:var(--gold-deep)}
+
+/* ===================== WHY BAND (dark) ===================== */
+.band{background:var(--cocoa);color:var(--porcelain)}
+.band .eyebrow{color:var(--gold-light)}
+.band em{color:var(--gold-light)}
+.why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.why-grid h2{font-size:clamp(28px,3.6vw,42px);color:var(--porcelain)}
+.why-grid p{color:rgba(251,247,243,.78);margin-top:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.stat{background:rgba(251,247,243,.05);border:1px solid rgba(228,200,134,.22);border-radius:18px;padding:22px 18px;text-align:center}
+.stat .num{font-family:var(--serif);font-size:32px;color:var(--gold-light)}
+.stat .lbl{font-size:12.5px;color:rgba(251,247,243,.72);margin-top:4px}
+.illus-note{font-size:12px;letter-spacing:.04em;color:rgba(251,247,243,.5);margin-top:16px;font-style:italic}
+
+/* ===================== SPOTLIGHT ===================== */
+.spot{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.spot-visual{aspect-ratio:1/1;border-radius:var(--radius-lg);background:linear-gradient(150deg,var(--blush),var(--nude));
+  box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.spot-visual::after{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.82),rgba(255,255,255,0) 70%)}
+.spot ul{list-style:none;padding:0;margin:22px 0 28px;display:flex;flex-direction:column;gap:12px}
+.spot li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px}
+.spot li .chk{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#3a2c10;
+  display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px}
+
+/* ===================== NEWSLETTER ===================== */
+.news{background:var(--cocoa);color:var(--porcelain);text-align:center}
+.news h2{color:var(--porcelain);font-size:clamp(28px,3.6vw,40px)}
+.news em{color:var(--gold-light)}
+.news p{color:rgba(251,247,243,.75);margin:14px auto 26px;max-width:30em}
+.news-form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news-form input{flex:1;min-width:220px;padding:15px 22px;border-radius:44px;border:1px solid rgba(228,200,134,.3);
+  background:rgba(251,247,243,.06);color:var(--porcelain);font-family:var(--sans);font-size:15px}
+.news-form input::placeholder{color:rgba(251,247,243,.55)}
+.news-form input:focus{outline:2px solid var(--gold-light);outline-offset:2px}
+.no-spam{font-size:12.5px;color:rgba(251,247,243,.55);margin-top:14px}
+
+/* ===================== FOOTER ===================== */
+.footer{background:var(--porcelain-2);border-top:1px solid var(--hairline);padding:66px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+.foot-brand .brand{text-align:left;padding:0;font-size:24px;margin-bottom:14px}
+.foot-brand p{font-size:14px;color:var(--cocoa-soft);max-width:26em}
+.foot-col h5{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 16px;font-weight:600}
+.foot-col a{display:block;font-size:14px;color:var(--cocoa-soft);margin-bottom:11px;transition:color .2s}
+.foot-col a:hover{color:var(--cocoa)}
+.foot-note{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--hairline);font-size:13px;color:var(--cocoa-soft)}
+.foot-note .pill{border:1px solid var(--hairline);border-radius:44px;padding:6px 14px;background:var(--porcelain)}
+.wa{color:#1f8a4c;font-weight:500}
+.demo-note{margin-top:18px;font-size:12.5px;color:var(--cocoa-soft);background:var(--blush);border:1px dashed var(--nude);
+  border-radius:14px;padding:12px 16px;font-style:italic}
+
+/* ===================== ANIMATION ===================== */
+.fade-up{opacity:0;transform:translateY(22px);animation:fadeUp .9s ease forwards}
+.fade-up.d1{animation-delay:.08s}
+.fade-up.d2{animation-delay:.16s}
+.fade-up.d3{animation-delay:.24s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:900px){
+  body{font-size:16px}
+  .nav{grid-template-columns:auto 1fr auto;height:64px}
+  .nav-left{gap:14px}
+  .nav-left a:not(.burger){display:none}
+  .burger{display:flex}
+  .brand{font-size:23px}
+  .nav-right a:not(.cart){display:none}
+  .hero-grid,.why-grid,.spot{grid-template-columns:1fr;gap:34px}
+  .hero-visual{max-width:420px;margin:0 auto;width:100%}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .ben-grid{grid-template-columns:repeat(2,1fr);gap:30px 18px}
+  .tst-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .sec{padding:58px 0}
+  .float-badge.tl{left:6px}.float-badge.br{right:6px}
+}
+@media(max-width:540px){
+  .cat-grid,.prod-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .stat .num{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;scroll-behavior:auto}
+  .fade-up{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 1. ANNOUNCEMENT MARQUEE ===== -->
+<div class="announce" role="region" aria-label="Store announcements">
+  <div class="marquee" aria-hidden="false">
+    <span>Free shipping across India</span><span>Cash on Delivery available</span><span>Easy 7-day returns</span>
+    <span>Free shipping across India</span><span>Cash on Delivery available</span><span>Easy 7-day returns</span>
+  </div>
+</div>
+
+<!-- ===== 2. STICKY HEADER ===== -->
+<header class="header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-left">
+        <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Pain Relief</a>
+        <a href="#categories">Beauty</a>
+      </div>
+      <a href="#top" class="brand" aria-label="SKOVA home">SKOVA</a>
+      <div class="nav-right">
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart" class="cart" aria-label="Cart, 0 items">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>
+          <span class="count">0</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== 3. HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy fade-up">
+      <span class="eyebrow">Premium everyday wellness · Made for India</span>
+      <h1>Feel-good essentials, <em>beautifully</em> upgraded.</h1>
+      <p class="sub">Thoughtful self-care, soothing relief and clever everyday upgrades — chosen for comfort, designed to feel premium, and priced to be honestly affordable.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-primary">Shop bestsellers</a>
+        <a href="#categories" class="btn btn-ghost">Explore categories</a>
+      </div>
+      <div class="trust-row">
+        <span><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> <span class="muted">· 2,400+ reviews*</span></span>
+        <span class="divider-dot" aria-hidden="true"></span>
+        <span class="trust-pill">Trusted across India</span>
+        <span class="trust-pill">COD available</span>
+      </div>
+    </div>
+    <div class="hero-visual fade-up d1" role="img" aria-label="SKOVA featured wellness product, photo coming soon">
+      <!-- replace with real product photo -->
+      <span class="ph-label">Featured product photo</span>
+      <div class="float-badge tl"><strong>Rs 699</strong><br/><span class="muted">Posture Corrector</span></div>
+      <div class="float-badge br"><span class="stars" aria-hidden="true">★★★★★</span><br/><span class="muted">Loved daily</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. CATEGORY GRID ===== -->
+<section class="sec" id="categories">
+  <div class="wrap">
+    <div class="sec-head center fade-up">
+      <span class="eyebrow">Shop by need</span>
+      <h2>Four ways to feel <em>better</em> every day</h2>
+      <p class="muted">From soothing relief to a five-minute glow — find your everyday upgrade.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#shop" class="cat-card cat-1 fade-up"><span class="c-num">01</span><h3>Pain Relief &amp; Support</h3><p class="muted" style="font-size:13.5px">Supportive comfort for back, neck &amp; joints.</p><span class="shop-now">Shop now →</span></a>
+      <a href="#shop" class="cat-card cat-2 fade-up d1"><span class="c-num">02</span><h3>Beauty &amp; Self-Care</h3><p class="muted" style="font-size:13.5px">Daily rituals for glowing, cared-for skin &amp; hair.</p><span class="shop-now">Shop now →</span></a>
+      <a href="#shop" class="cat-card cat-3 fade-up d2"><span class="c-num">03</span><h3>Fitness &amp; Recovery</h3><p class="muted" style="font-size:13.5px">Train, support &amp; recover with everyday tools.</p><span class="shop-now">Shop now →</span></a>
+      <a href="#shop" class="cat-card cat-4 fade-up d3"><span class="c-num">04</span><h3>Home &amp; Lifestyle</h3><p class="muted" style="font-size:13.5px">Clever upgrades that make daily life easier.</p><span class="shop-now">Shop now →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. BESTSELLERS ===== -->
+<section class="sec" id="shop" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head center fade-up">
+      <span class="eyebrow">Bestsellers</span>
+      <h2>The ones everyone's <em>loving</em></h2>
+      <p class="muted">Tried, tested and re-ordered — our most-loved SKOVA essentials.</p>
+    </div>
+    <div class="prod-grid">
+
+      <article class="card fade-up">
+        <div class="card-media"><span class="tag">Bestseller</span>
+          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Posture Corrector Brace</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8 · 320*</span>
+          <p class="card-desc">Invisible back &amp; shoulder support that gently trains you to stand tall.</p>
+          <div class="card-foot"><span class="price">Rs 699</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d1">
+        <div class="card-media"><span class="tag">Glow ritual</span>
+          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA 24K Gold Beauty Bar</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 · 410*</span>
+          <p class="card-desc">Electric facial massage roller for a daily 5-minute spa glow.</p>
+          <div class="card-foot"><span class="price">Rs 566</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d2">
+        <div class="card-media"><span class="tag">Soothing heat</span>
+          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Portable USB Heating Pad</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7 · 260*</span>
+          <p class="card-desc">Cordless heat for period &amp; muscle pain, anywhere.</p>
+          <div class="card-foot"><span class="price">Rs 949</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d3">
+        <div class="card-media"><span class="tag">Salon at home</span>
+          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA 5-in-1 Hair Styling Tool</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8 · 190*</span>
+          <p class="card-desc">Hot air brush + dryer with detachable heads — salon blowouts at home.</p>
+          <div class="card-foot"><span class="price">Rs 1399</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+        </div>
+      </article>
+
+    </div>
+    <div class="center" style="margin-top:38px"><a href="#shop" class="btn btn-ghost">View all products</a></div>
+  </div>
+</section>
+
+<!-- ===== 6. BENEFITS ROW ===== -->
+<section class="benefits sec">
+  <div class="wrap ben-grid">
+    <div class="ben fade-up">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="14" height="11" rx="1"/><path d="M16 9h4l2 3v5h-6z"/><circle cx="6" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></span>
+      <h4>Cash on Delivery</h4><p>Pay at your doorstep. Shop with total peace of mind.</p>
+    </div>
+    <div class="ben fade-up d1">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13v8H3z"/><path d="M16 10h3l2 2v3h-5z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 19a2 2 0 1 0 0-4"/></svg></span>
+      <h4>Free shipping across India</h4><p>Delivered to your door, no extra charges.</p>
+    </div>
+    <div class="ben fade-up d2">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 5v4h4"/><path d="M12 8v4l3 2"/></svg></span>
+      <h4>Easy 7-day returns</h4><p>Changed your mind? Return within 7 days, hassle-free.</p>
+    </div>
+    <div class="ben fade-up d3">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <h4>Secure checkout</h4><p>Trusted, encrypted payments every single time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. TESTIMONIALS ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center fade-up">
+      <span class="eyebrow">Loved across India</span>
+      <h2>Real comfort, <em>honest</em> words</h2>
+      <p class="muted">A few of the stories we hear most often.</p>
+    </div>
+    <div class="tst-grid">
+      <article class="tst fade-up">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="quote">"My back feels so much more supported through long work days. It tucks under my kurti and no one can tell."</p>
+        <div class="tst-foot"><span class="avatar" aria-hidden="true">A</span><div><div class="who">Ananya · Pune</div><div class="verified">Verified buyer</div></div></div>
+      </article>
+      <article class="tst fade-up d1">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="quote">"The Gold Beauty Bar is my five-minute me-time every night. My skin feels calmer and looks brighter."</p>
+        <div class="tst-foot"><span class="avatar" aria-hidden="true">R</span><div><div class="who">Riya · Jaipur</div><div class="verified">Verified buyer</div></div></div>
+      </article>
+      <article class="tst fade-up d2">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="quote">"COD made it easy to trust them the first time. Fast delivery and the heating pad really helps on cramp days."</p>
+        <div class="tst-foot"><span class="avatar" aria-hidden="true">S</span><div><div class="who">Sneha · Lucknow</div><div class="verified">Verified buyer</div></div></div>
+      </article>
+    </div>
+    <p class="center muted" style="font-size:12.5px;margin-top:24px;font-style:italic">*Reviews shown are illustrative samples and will be replaced with verified customer reviews.</p>
+  </div>
+</section>
+
+<!-- ===== 8. WHY SKOVA BAND ===== -->
+<section class="band sec">
+  <div class="wrap why-grid">
+    <div class="fade-up">
+      <span class="eyebrow">Why SKOVA</span>
+      <h2>Premium self-care that feels <em>caring</em> — not costly.</h2>
+      <p>We hunt for everyday essentials that genuinely make life softer, then upgrade the quality, the feel and the details. No loud gimmicks, no inflated prices — just feel-good products you can trust, delivered across India with Cash on Delivery.</p>
+      <p class="illus-note">*Figures below are illustrative placeholders until verified.</p>
+    </div>
+    <div class="stats fade-up d1">
+      <div class="stat"><div class="num">50k+</div><div class="lbl">Happy customers*</div></div>
+      <div class="stat"><div class="num">120k+</div><div class="lbl">Orders shipped*</div></div>
+      <div class="stat"><div class="num">4.8★</div><div class="lbl">Average rating*</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. FEATURED SPOTLIGHT ===== -->
+<section class="sec">
+  <div class="wrap spot">
+    <div class="spot-visual fade-up" role="img" aria-label="SKOVA Posture Corrector Brace, photo coming soon">
+      <!-- replace with real product photo --><span class="ph-label">Product spotlight photo</span>
+    </div>
+    <div class="fade-up d1">
+      <span class="eyebrow">Featured · Pain Relief</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);margin:12px 0 8px">SKOVA Posture <em>Corrector</em> Brace</h2>
+      <p class="muted">Invisible back &amp; shoulder support that gently reminds you to sit and stand tall — for supportive relief through long days at the desk or on the go.</p>
+      <ul>
+        <li><span class="chk" aria-hidden="true">✓</span> Gentle, all-day support designed to ease slouching strain</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Slim &amp; discreet — wears invisibly under everyday clothes</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Adjustable fit for men &amp; women</li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary">Shop now · Rs 699</a>
+        <span class="trust-pill">COD available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. NEWSLETTER ===== -->
+<section class="news sec">
+  <div class="wrap">
+    <div class="fade-up">
+      <span class="eyebrow">Join the list</span>
+      <h2>Join SKOVA for offers &amp; <em>self-care</em> tips</h2>
+      <p>Be first to hear about new launches, gentle wellness tips and members-only offers.</p>
+      <form class="news-form" onsubmit="return false" aria-label="Newsletter signup">
+        <label for="news-email" style="position:absolute;left:-9999px">Email address</label>
+        <input id="news-email" type="email" placeholder="Your email address" autocomplete="email"/>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="no-spam">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 11. FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">SKOVA</div>
+        <p>Feel-good essentials, beautifully upgraded. Premium everyday wellness, self-care &amp; relief essentials — made for modern India.</p>
+        <p style="margin-top:14px"><a href="https://wa.me/910000000000" class="wa">WhatsApp support →</a></p>
+      </div>
+      <div class="foot-col">
+        <h5>Shop</h5>
+        <a href="#shop">Pain Relief &amp; Support</a>
+        <a href="#shop">Beauty &amp; Self-Care</a>
+        <a href="#shop">Fitness &amp; Recovery</a>
+        <a href="#shop">Home &amp; Lifestyle</a>
+        <a href="#shop">All products</a>
+      </div>
+      <div class="foot-col">
+        <h5>Help</h5>
+        <a href="#">Track my order</a>
+        <a href="#">Shipping &amp; delivery</a>
+        <a href="#">Returns &amp; refunds</a>
+        <a href="#">FAQ</a>
+        <a href="#contact">Contact us</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#story">Our Story</a>
+        <a href="#">Reviews</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span class="pill">Cash on Delivery</span>
+      <span class="pill">Free shipping across India</span>
+      <span class="pill">Easy 7-day returns</span>
+      <span class="pill">Secure checkout</span>
+      <span style="margin-left:auto">© 2026 SKOVA · getskova.in@gmail.com</span>
+    </div>
+    <p class="demo-note">Demo content — testimonials, ratings and stats are illustrative, and product visuals are placeholders. Replace with real photos &amp; verified reviews before launch.</p>
+  </div>
+</footer>
+
+</body>
+</html>
