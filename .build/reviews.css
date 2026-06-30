@@ -1,0 +1,32 @@
+
+.page-hero{padding:64px 0 42px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:560px;height:420px;
+  background:radial-gradient(circle,rgba(228,200,134,.4),rgba(228,200,134,0) 66%);z-index:0}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(34px,5vw,56px);margin:14px auto 16px;max-width:14em}
+.page-hero p{max-width:34em;margin:0 auto;color:var(--cocoa-soft)}
+/* summary card */
+.rev-summary{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:var(--porcelain-2);
+  border:1px solid var(--hairline);border-radius:var(--radius-lg);padding:34px 40px;box-shadow:var(--shadow-soft);max-width:860px;margin:0 auto 50px}
+.rev-score{text-align:center}
+.rev-score .big{font-family:var(--serif);font-size:58px;line-height:1}
+.rev-score .stars{font-size:18px}
+.rev-bars{display:flex;flex-direction:column;gap:9px}
+.bar-row{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--cocoa-soft)}
+.bar-row .lbl{width:42px}
+.bar{flex:1;height:9px;border-radius:9px;background:var(--blush);overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-light),var(--gold-deep))}
+/* masonry via CSS columns */
+.masonry{column-count:3;column-gap:20px}
+.masonry .rev{break-inside:avoid;background:var(--porcelain-2);border:1px solid var(--hairline);border-radius:var(--radius);
+  padding:22px 22px;margin-bottom:20px;display:flex;flex-direction:column;gap:11px;box-shadow:var(--shadow-soft)}
+.rev .prod-ref{font-size:12px;color:var(--gold-deep);letter-spacing:.04em;font-weight:600}
+.rev .quote{font-size:15px;line-height:1.55}
+.rev-foot{display:flex;align-items:center;gap:11px;margin-top:2px}
+.rev-foot .who{font-size:13.5px;font-weight:500}
+.rev-foot .verified{font-size:11.5px;color:var(--gold-deep)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba div{aspect-ratio:4/3;border-radius:12px;background:linear-gradient(150deg,var(--blush),var(--nude));
+  display:flex;align-items:flex-end;padding:8px;font-size:11px;color:rgba(42,33,28,.5)}
+@media(max-width:900px){.rev-summary{grid-template-columns:1fr;gap:24px;text-align:center}.masonry{column-count:2}}
+@media(max-width:600px){.masonry{column-count:1}}

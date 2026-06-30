@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SKOVA — Feel-good essentials, beautifully upgraded</title>
-<meta name="description" content="SKOVA — premium everyday wellness, self-care & relief essentials for modern India. Cash on Delivery, free shipping across India, easy 7-day returns."/>
+<title>SKOVA — Shop all wellness & self-care essentials</title>
+<meta name="description" content="Shop all 16 SKOVA wellness, self-care, fitness and home essentials. Premium quality, honest prices, Cash on Delivery across India."/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap');
 
@@ -263,13 +263,31 @@ section{position:relative}
   *{animation-duration:.001ms !important;animation-iteration-count:1 !important;scroll-behavior:auto}
   .fade-up{opacity:1;transform:none}
 }
+
+/* ===================== PAGE HERO ===================== */
+.page-hero{padding:64px 0 42px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:560px;height:420px;
+  background:radial-gradient(circle,rgba(228,200,134,.4),rgba(228,200,134,0) 66%);z-index:0}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(34px,5vw,56px);margin:14px auto 16px;max-width:14em}
+.page-hero p{max-width:34em;margin:0 auto;color:var(--cocoa-soft)}
+/* ===================== FILTER CHIPS ===================== */
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 4px}
+.chip{font-size:14px;font-weight:500;padding:10px 20px;border-radius:44px;border:1px solid var(--hairline);
+  background:var(--porcelain-2);color:var(--cocoa-soft);transition:all .2s}
+.chip:hover{border-color:var(--gold);color:var(--cocoa)}
+.chip.active{background:var(--cocoa);color:var(--porcelain);border-color:var(--cocoa)}
+/* ===================== CATEGORY BLOCK ===================== */
+.cat-block{padding-top:54px;scroll-margin-top:90px}
+.cat-block-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.cat-block-head h2{font-size:clamp(24px,3vw,34px)}
+.cat-block-head .count-lbl{font-size:13px;color:var(--cocoa-soft);letter-spacing:.04em}
 </style>
 </head>
 <body>
-
 <!-- ===== 1. ANNOUNCEMENT MARQUEE ===== -->
 <div class="announce" role="region" aria-label="Store announcements">
-  <div class="marquee" aria-hidden="false">
+  <div class="marquee">
     <span>Free shipping across India</span><span>Cash on Delivery available</span><span>Easy 7-day returns</span>
     <span>Free shipping across India</span><span>Cash on Delivery available</span><span>Easy 7-day returns</span>
   </div>
@@ -300,221 +318,222 @@ section{position:relative}
 
 <main id="top">
 
-<!-- ===== 3. HERO ===== -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy fade-up">
-      <span class="eyebrow">Premium everyday wellness · Made for India</span>
-      <h1>Feel-good essentials, <em>beautifully</em> upgraded.</h1>
-      <p class="sub">Thoughtful self-care, soothing relief and clever everyday upgrades — chosen for comfort, designed to feel premium, and priced to be honestly affordable.</p>
-      <div class="hero-cta">
-        <a href="shop.html" class="btn btn-primary">Shop bestsellers</a>
-        <a href="#categories" class="btn btn-ghost">Explore categories</a>
-      </div>
-      <div class="trust-row">
-        <span><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> <span class="muted">· 2,400+ reviews*</span></span>
-        <span class="divider-dot" aria-hidden="true"></span>
-        <span class="trust-pill">Trusted across India</span>
-        <span class="trust-pill">COD available</span>
-      </div>
-    </div>
-    <div class="hero-visual fade-up d1" role="img" aria-label="SKOVA featured wellness product, photo coming soon">
-      <!-- replace with real product photo -->
-      <span class="ph-label">Featured product photo</span>
-      <div class="float-badge tl"><strong>Rs 699</strong><br/><span class="muted">Posture Corrector</span></div>
-      <div class="float-badge br"><span class="stars" aria-hidden="true">★★★★★</span><br/><span class="muted">Loved daily</span></div>
-    </div>
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">All products</span>
+    <h1>Everyday upgrades, <em>thoughtfully</em> chosen</h1>
+    <p>Sixteen feel-good essentials across wellness, beauty, fitness and home — premium quality, honest pricing, delivered across India with Cash on Delivery.</p>
+    <nav class="chips" aria-label="Filter by category">
+      <a class="chip active" href="#all">All</a>
+      <a class="chip" href="#pain">Pain Relief</a>
+      <a class="chip" href="#beauty">Beauty</a>
+      <a class="chip" href="#fitness">Fitness</a>
+      <a class="chip" href="#home">Home</a>
+    </nav>
   </div>
 </section>
 
-<!-- ===== 4. CATEGORY GRID ===== -->
-<section class="sec" id="categories">
-  <div class="wrap">
-    <div class="sec-head center fade-up">
-      <span class="eyebrow">Shop by need</span>
-      <h2>Four ways to feel <em>better</em> every day</h2>
-      <p class="muted">From soothing relief to a five-minute glow — find your everyday upgrade.</p>
-    </div>
-    <div class="cat-grid">
-      <a href="shop.html" class="cat-card cat-1 fade-up"><span class="c-num">01</span><h3>Pain Relief &amp; Support</h3><p class="muted" style="font-size:13.5px">Supportive comfort for back, neck &amp; joints.</p><span class="shop-now">Shop now →</span></a>
-      <a href="shop.html" class="cat-card cat-2 fade-up d1"><span class="c-num">02</span><h3>Beauty &amp; Self-Care</h3><p class="muted" style="font-size:13.5px">Daily rituals for glowing, cared-for skin &amp; hair.</p><span class="shop-now">Shop now →</span></a>
-      <a href="shop.html" class="cat-card cat-3 fade-up d2"><span class="c-num">03</span><h3>Fitness &amp; Recovery</h3><p class="muted" style="font-size:13.5px">Train, support &amp; recover with everyday tools.</p><span class="shop-now">Shop now →</span></a>
-      <a href="shop.html" class="cat-card cat-4 fade-up d3"><span class="c-num">04</span><h3>Home &amp; Lifestyle</h3><p class="muted" style="font-size:13.5px">Clever upgrades that make daily life easier.</p><span class="shop-now">Shop now →</span></a>
-    </div>
-  </div>
-</section>
+<div class="wrap" id="all">
 
-<!-- ===== 5. BESTSELLERS ===== -->
-<section class="sec" id="shop" style="padding-top:10px">
-  <div class="wrap">
-    <div class="sec-head center fade-up">
-      <span class="eyebrow">Bestsellers</span>
-      <h2>The ones everyone's <em>loving</em></h2>
-      <p class="muted">Tried, tested and re-ordered — our most-loved SKOVA essentials.</p>
-    </div>
+  <!-- ===== PAIN RELIEF ===== -->
+  <section class="cat-block" id="pain">
+    <div class="cat-block-head"><h2>Pain Relief &amp; <em>Support</em></h2><span class="count-lbl">6 products</span></div>
     <div class="prod-grid">
 
       <article class="card fade-up">
-        <div class="card-media"><span class="tag">Bestseller</span>
-          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-media"><span class="tag">Bestseller</span><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
         <div class="card-body">
           <h3 class="name">SKOVA Posture Corrector Brace</h3>
-          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8 · 320*</span>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8*</span>
           <p class="card-desc">Invisible back &amp; shoulder support that gently trains you to stand tall.</p>
-          <div class="card-foot"><span class="price">Rs 699</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+          <div class="card-foot"><span class="price">Rs 699</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
         </div>
       </article>
 
       <article class="card fade-up d1">
-        <div class="card-media"><span class="tag">Glow ritual</span>
-          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
         <div class="card-body">
-          <h3 class="name">SKOVA 24K Gold Beauty Bar</h3>
-          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 · 410*</span>
-          <p class="card-desc">Electric facial massage roller for a daily 5-minute spa glow.</p>
-          <div class="card-foot"><span class="price">Rs 566</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+          <h3 class="name">SKOVA Adjustable Back Brace Posture Corrector</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
+          <p class="card-desc">Invisible all-day support for better posture, men &amp; women.</p>
+          <div class="card-foot"><span class="price">Rs 999</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
         </div>
       </article>
 
       <article class="card fade-up d2">
-        <div class="card-media"><span class="tag">Soothing heat</span>
-          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
         <div class="card-body">
           <h3 class="name">SKOVA Portable USB Heating Pad</h3>
-          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7 · 260*</span>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
           <p class="card-desc">Cordless heat for period &amp; muscle pain, anywhere.</p>
-          <div class="card-foot"><span class="price">Rs 949</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+          <div class="card-foot"><span class="price">Rs 949</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
         </div>
       </article>
 
-      <article class="card fade-up d3">
-        <div class="card-media"><span class="tag">Salon at home</span>
-          <!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+      <article class="card fade-up">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Orthopedic Cervical Pillow</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8*</span>
+          <p class="card-desc">Memory-foam neck support for pain-free mornings.</p>
+          <div class="card-foot"><span class="price">Rs 859</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d1">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Mini Massager (8 modes, 19 levels)</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.6*</span>
+          <p class="card-desc">A pocket physiotherapist for back, shoulder &amp; legs.</p>
+          <div class="card-foot"><span class="price">Rs 765</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d2">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Knee Sleeves (Pair)</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
+          <p class="card-desc">Compression support for joints and pain relief.</p>
+          <div class="card-foot"><span class="price">Rs 799</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== BEAUTY ===== -->
+  <section class="cat-block" id="beauty">
+    <div class="cat-block-head"><h2>Beauty &amp; <em>Self-Care</em></h2><span class="count-lbl">5 products</span></div>
+    <div class="prod-grid">
+
+      <article class="card fade-up">
+        <div class="card-media"><span class="tag">Glow ritual</span><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA 24K Gold Beauty Bar</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.9*</span>
+          <p class="card-desc">Electric facial massage roller for a daily 5-minute spa glow.</p>
+          <div class="card-foot"><span class="price">Rs 566</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d1">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA 5-in-1 Facial Cleansing Brush</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
+          <p class="card-desc">Deep-clean &amp; massage for clearer, smoother skin.</p>
+          <div class="card-foot"><span class="price">Rs 699</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d2">
+        <div class="card-media"><span class="tag">Salon at home</span><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
         <div class="card-body">
           <h3 class="name">SKOVA 5-in-1 Hair Styling Tool</h3>
-          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8 · 190*</span>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8*</span>
           <p class="card-desc">Hot air brush + dryer with detachable heads — salon blowouts at home.</p>
-          <div class="card-foot"><span class="price">Rs 1399</span><a href="#" class="btn btn-light btn-sm">Add to cart</a></div>
+          <div class="card-foot"><span class="price">Rs 1399</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Self-Cleaning Anti-Static Massage Comb</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.6*</span>
+          <p class="card-desc">Detangle, massage &amp; self-clean in one effortless brush.</p>
+          <div class="card-foot"><span class="price">Rs 579</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
+
+      <article class="card fade-up d1">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Relaxing Eye Mask</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.8*</span>
+          <p class="card-desc">Soothing comfort that melts away tired, strained eyes.</p>
+          <div class="card-foot"><span class="price">Rs 1299</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
         </div>
       </article>
 
     </div>
-    <div class="center" style="margin-top:38px"><a href="shop.html" class="btn btn-ghost">View all products</a></div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== 6. BENEFITS ROW ===== -->
-<section class="benefits sec">
-  <div class="wrap ben-grid">
-    <div class="ben fade-up">
-      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="14" height="11" rx="1"/><path d="M16 9h4l2 3v5h-6z"/><circle cx="6" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></span>
-      <h4>Cash on Delivery</h4><p>Pay at your doorstep. Shop with total peace of mind.</p>
-    </div>
-    <div class="ben fade-up d1">
-      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13v8H3z"/><path d="M16 10h3l2 2v3h-5z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 19a2 2 0 1 0 0-4"/></svg></span>
-      <h4>Free shipping across India</h4><p>Delivered to your door, no extra charges.</p>
-    </div>
-    <div class="ben fade-up d2">
-      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 5v4h4"/><path d="M12 8v4l3 2"/></svg></span>
-      <h4>Easy 7-day returns</h4><p>Changed your mind? Return within 7 days, hassle-free.</p>
-    </div>
-    <div class="ben fade-up d3">
-      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <h4>Secure checkout</h4><p>Trusted, encrypted payments every single time.</p>
-    </div>
-  </div>
-</section>
+  <!-- ===== FITNESS ===== -->
+  <section class="cat-block" id="fitness">
+    <div class="cat-block-head"><h2>Fitness &amp; <em>Recovery</em></h2><span class="count-lbl">2 products</span></div>
+    <div class="prod-grid">
 
-<!-- ===== 7. TESTIMONIALS ===== -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head center fade-up">
-      <span class="eyebrow">Loved across India</span>
-      <h2>Real comfort, <em>honest</em> words</h2>
-      <p class="muted">A few of the stories we hear most often.</p>
-    </div>
-    <div class="tst-grid">
-      <article class="tst fade-up">
-        <span class="stars" aria-hidden="true">★★★★★</span>
-        <p class="quote">"My back feels so much more supported through long work days. It tucks under my kurti and no one can tell."</p>
-        <div class="tst-foot"><span class="avatar" aria-hidden="true">A</span><div><div class="who">Ananya · Pune</div><div class="verified">Verified buyer</div></div></div>
+      <article class="card fade-up">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Adjustable Waist Trimmer Belt (Pack of 2)</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.6*</span>
+          <p class="card-desc">Core support &amp; sweat belt for workouts.</p>
+          <div class="card-foot"><span class="price">Rs 939</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
       </article>
-      <article class="tst fade-up d1">
-        <span class="stars" aria-hidden="true">★★★★★</span>
-        <p class="quote">"The Gold Beauty Bar is my five-minute me-time every night. My skin feels calmer and looks brighter."</p>
-        <div class="tst-foot"><span class="avatar" aria-hidden="true">R</span><div><div class="who">Riya · Jaipur</div><div class="verified">Verified buyer</div></div></div>
+
+      <article class="card fade-up d1">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Hand &amp; Finger Strengthener Grip</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
+          <p class="card-desc">Build grip and forearm strength anywhere.</p>
+          <div class="card-foot"><span class="price">Rs 879</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
       </article>
-      <article class="tst fade-up d2">
-        <span class="stars" aria-hidden="true">★★★★★</span>
-        <p class="quote">"COD made it easy to trust them the first time. Fast delivery and the heating pad really helps on cramp days."</p>
-        <div class="tst-foot"><span class="avatar" aria-hidden="true">S</span><div><div class="who">Sneha · Lucknow</div><div class="verified">Verified buyer</div></div></div>
+
+    </div>
+  </section>
+
+  <!-- ===== HOME ===== -->
+  <section class="cat-block" id="home">
+    <div class="cat-block-head"><h2>Home &amp; <em>Lifestyle</em></h2><span class="count-lbl">3 products</span></div>
+    <div class="prod-grid">
+
+      <article class="card fade-up">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Hands-Free Neckband Fan</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.6*</span>
+          <p class="card-desc">USB rechargeable neck fan with LED light — stay cool, hands-free.</p>
+          <div class="card-foot"><span class="price">Rs 779</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
       </article>
-    </div>
-    <p class="center muted" style="font-size:12.5px;margin-top:24px;font-style:italic">*Reviews shown are illustrative samples and will be replaced with verified customer reviews.</p>
-  </div>
-</section>
 
-<!-- ===== 8. WHY SKOVA BAND ===== -->
-<section class="band sec">
-  <div class="wrap why-grid">
-    <div class="fade-up">
-      <span class="eyebrow">Why SKOVA</span>
-      <h2>Premium self-care that feels <em>caring</em> — not costly.</h2>
-      <p>We hunt for everyday essentials that genuinely make life softer, then upgrade the quality, the feel and the details. No loud gimmicks, no inflated prices — just feel-good products you can trust, delivered across India with Cash on Delivery.</p>
-      <p class="illus-note">*Figures below are illustrative placeholders until verified.</p>
-    </div>
-    <div class="stats fade-up d1">
-      <div class="stat"><div class="num">50k+</div><div class="lbl">Happy customers*</div></div>
-      <div class="stat"><div class="num">120k+</div><div class="lbl">Orders shipped*</div></div>
-      <div class="stat"><div class="num">4.8★</div><div class="lbl">Average rating*</div></div>
-    </div>
-  </div>
-</section>
+      <article class="card fade-up d1">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA 2-in-1 Mini Bag Sealer</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.5*</span>
+          <p class="card-desc">USB heat sealer &amp; cutter to keep food fresh.</p>
+          <div class="card-foot"><span class="price">Rs 766</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
 
-<!-- ===== 9. FEATURED SPOTLIGHT ===== -->
-<section class="sec">
-  <div class="wrap spot">
-    <div class="spot-visual fade-up" role="img" aria-label="SKOVA Posture Corrector Brace, photo coming soon">
-      <!-- replace with real product photo --><span class="ph-label">Product spotlight photo</span>
-    </div>
-    <div class="fade-up d1">
-      <span class="eyebrow">Featured · Pain Relief</span>
-      <h2 style="font-size:clamp(28px,3.6vw,42px);margin:12px 0 8px">SKOVA Posture <em>Corrector</em> Brace</h2>
-      <p class="muted">Invisible back &amp; shoulder support that gently reminds you to sit and stand tall — for supportive relief through long days at the desk or on the go.</p>
-      <ul>
-        <li><span class="chk" aria-hidden="true">✓</span> Gentle, all-day support designed to ease slouching strain</li>
-        <li><span class="chk" aria-hidden="true">✓</span> Slim &amp; discreet — wears invisibly under everyday clothes</li>
-        <li><span class="chk" aria-hidden="true">✓</span> Adjustable fit for men &amp; women</li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-        <a href="#" class="btn btn-primary">Shop now · Rs 699</a>
-        <span class="trust-pill">COD available</span>
-      </div>
-    </div>
-  </div>
-</section>
+      <article class="card fade-up d2">
+        <div class="card-media"><!-- replace with real product photo --><span class="ph-label">Product photo</span></div>
+        <div class="card-body">
+          <h3 class="name">SKOVA Electric Pet Massager</h3>
+          <span class="card-rate"><span class="stars" aria-hidden="true">★★★★★</span> 4.7*</span>
+          <p class="card-desc">Soothing vibration massage your cat or dog will love.</p>
+          <div class="card-foot"><span class="price">Rs 1259</span><a href="product.html" class="btn btn-light btn-sm">View product</a></div>
+        </div>
+      </article>
 
-<!-- ===== 10. NEWSLETTER ===== -->
-<section class="news sec">
-  <div class="wrap">
-    <div class="fade-up">
-      <span class="eyebrow">Join the list</span>
-      <h2>Join SKOVA for offers &amp; <em>self-care</em> tips</h2>
-      <p>Be first to hear about new launches, gentle wellness tips and members-only offers.</p>
-      <form class="news-form" onsubmit="return false" aria-label="Newsletter signup">
-        <label for="news-email" style="position:absolute;left:-9999px">Email address</label>
-        <input id="news-email" type="email" placeholder="Your email address" autocomplete="email"/>
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-      <p class="no-spam">No spam, ever. Unsubscribe anytime.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <p class="center muted" style="font-size:12.5px;margin:46px 0 0;font-style:italic">*Ratings shown are illustrative samples and will be replaced with verified customer reviews.</p>
+</div>
 
 </main>
-
-<!-- ===== 11. FOOTER ===== -->
-<footer class="footer" id="contact">
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -532,16 +551,16 @@ section{position:relative}
       </div>
       <div class="foot-col">
         <h5>Help</h5>
-        <a href="#">Track my order</a>
-        <a href="#">Shipping &amp; delivery</a>
-        <a href="#">Returns &amp; refunds</a>
-        <a href="#">FAQ</a>
-        <a href="#contact">Contact us</a>
+        <a href="faq.html">Track my order</a>
+        <a href="faq.html">Shipping &amp; delivery</a>
+        <a href="faq.html">Returns &amp; refunds</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact us</a>
       </div>
       <div class="foot-col">
         <h5>Company</h5>
-        <a href="#story">Our Story</a>
-        <a href="#">Reviews</a>
+        <a href="about.html">Our Story</a>
+        <a href="reviews.html">Reviews</a>
         <a href="#">Privacy policy</a>
         <a href="#">Terms of service</a>
       </div>
@@ -556,6 +575,5 @@ section{position:relative}
     <p class="demo-note">Demo content — testimonials, ratings and stats are illustrative, and product visuals are placeholders. Replace with real photos &amp; verified reviews before launch.</p>
   </div>
 </footer>
-
 </body>
 </html>

@@ -1,0 +1,19 @@
+
+/* ===================== PAGE HERO ===================== */
+.page-hero{padding:64px 0 42px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:560px;height:420px;
+  background:radial-gradient(circle,rgba(228,200,134,.4),rgba(228,200,134,0) 66%);z-index:0}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(34px,5vw,56px);margin:14px auto 16px;max-width:14em}
+.page-hero p{max-width:34em;margin:0 auto;color:var(--cocoa-soft)}
+/* ===================== FILTER CHIPS ===================== */
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 4px}
+.chip{font-size:14px;font-weight:500;padding:10px 20px;border-radius:44px;border:1px solid var(--hairline);
+  background:var(--porcelain-2);color:var(--cocoa-soft);transition:all .2s}
+.chip:hover{border-color:var(--gold);color:var(--cocoa)}
+.chip.active{background:var(--cocoa);color:var(--porcelain);border-color:var(--cocoa)}
+/* ===================== CATEGORY BLOCK ===================== */
+.cat-block{padding-top:54px;scroll-margin-top:90px}
+.cat-block-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.cat-block-head h2{font-size:clamp(24px,3vw,34px)}
+.cat-block-head .count-lbl{font-size:13px;color:var(--cocoa-soft);letter-spacing:.04em}
